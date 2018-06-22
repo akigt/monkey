@@ -3,24 +3,24 @@ package token
 type TokenType string
 
 type Token struct {
-	Type TokenType
+	Type    TokenType
 	Literal string
 }
 
 const (
 	ILLEGAL = "ILLEGAL"
-	EOF = "EOF"
+	EOF     = "EOF"
 
 	// 識別し
 	IDENT = "IDENT" // add,foobar,x,y
-	INT = "INT" // 123456
+	INT   = "INT"   // 123456
 
 	//演算子
-	ASSGIN = "="
-	PLUS = "+"
+	ASSIGN = "="
+	PLUS   = "+"
 
 	//デリミタ
-	COMMA = ","
+	COMMA     = ","
 	SEMICOLON = ";"
 
 	LPAREN = "("
@@ -29,5 +29,5 @@ const (
 	RBRACE = "}"
 
 	FUNCTION = "FUNCTION"
-	LET = "LET"
-	)
+	LET      = "LET"
+)
