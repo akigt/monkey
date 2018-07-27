@@ -11,6 +11,7 @@ const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
 
+	STRING = "STRING"
 	// 識別し
 	IDENT = "IDENT" // add,foobar,x,y
 	INT   = "INT"   // 123456
