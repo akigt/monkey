@@ -124,7 +124,7 @@ func (f *Function) Inspect() string {
 	out.WriteString("(")
 	out.WriteString(strings.Join(params, ", "))
 	out.WriteString(") {\n")
-	out.WriteString("f.Body.String()")
+	out.WriteString(f.Body.String())
 	out.WriteString("\n}")
 
 	return out.String()
