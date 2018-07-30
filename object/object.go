@@ -24,7 +24,7 @@ const (
 )
 
 type Hashable interface {
-	Hashkey() HashKey
+	HashKey() HashKey
 }
 
 type Object interface {
@@ -45,6 +45,17 @@ type Boolean struct {
 
 func (b *Boolean) Type() ObjectType { return BOOLEAN_OBJ }
 func (b *Boolean) Inspect() string  { return fmt.Sprintf("%t", b.Value) }
+func (b *Boolean) HashKey() HashKey {
+	var value uint64
+
+	if b.Value {
+		value = 1
+	} else {
+		value = 0
+	}
+
+	return HashKey{Type: b.Type(), Value: value}
+}
 
 type Null struct{}
 
@@ -157,18 +168,6 @@ func (ao *Array) Inspect() string {
 type HashKey struct {
 	Type  ObjectType
 	Value uint64
-}
-
-func (b *Boolean) HashKey() HashKey {
-	var value uint64
-
-	if b.Value {
-		value = 1
-	} else {
-		value = 0
-	}
-
-	return HashKey{Type: b.Type(), Value: value}
 }
 
 func (i *Integer) HashKey() HashKey {

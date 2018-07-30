@@ -381,7 +381,7 @@ func evalHashLiteral(
 			return value
 		}
 
-		hashed := hashKey.Hashkey()
+		hashed := hashKey.HashKey()
 		pairs[hashed] = object.HashPair{Key: key, Value: value}
 	}
 
